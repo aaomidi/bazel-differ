@@ -27,9 +27,9 @@ jobs:
       # You won't do this in your build since you will likely use a prebuilt bazel-differ binary, but we
       # need to bootstrap
       - name: build
-        run: bazel build //cli:bazel-differ
+        run: bazel build //:bazel-differ
       - name: set bazel differ path
-        run: echo "BAZEL_DIFFER=$(bazel info bazel-bin)/cli/bazel-differ_/bazel-differ" >> $GITHUB_ENV
+        run: echo "BAZEL_DIFFER=$(bazel info bazel-bin)/bazel-differ_/bazel-differ" >> $GITHUB_ENV
       # This section starts an example of how to use get-targets in your CI process
       - name: Get revisions
         id: get-revisions
